@@ -85,7 +85,7 @@ const Typo = styled.div`
 
   @media (max-width: 1080px) {
     row-gap: 30px;
-    padding: 0 30px 80px;
+    padding: 0 30px 50px;
   }
 
   h1 {
