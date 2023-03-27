@@ -3,12 +3,6 @@ import React from 'react'
 //styles
 import styled from '@emotion/styled'
 
-//svg
-import InstaIcon from 'public/icons/insta-icon.svg'
-import TwitterIcon from 'public/icons/twitter-icon.svg'
-import YoutubeIcon from 'public/icons/youtube-icon.svg'
-import Link from 'next/link'
-
 //
 export default function Footer() {
   return (
@@ -18,20 +12,6 @@ export default function Footer() {
         <Info>
           {`대표 : 정재환 | 사업자등록번호 : 111-12-34567 \n  연락처 : 02-123-4567 | 이메일 : text@testComp.com \n  주소 : 서울시 강남구 테헤란로 00호스빌딩 11 xx빌딩 605호`}
         </Info>
-
-        <SNS>
-          <Link href="">
-            <InstaIcon />
-          </Link>
-
-          <Link href="">
-            <TwitterIcon />
-          </Link>
-
-          <Link href="">
-            <YoutubeIcon />
-          </Link>
-        </SNS>
 
         <Copyright>
           Copyright ⓒ Deep Factory Design. All Rights Reserved
@@ -44,7 +24,7 @@ export default function Footer() {
 //styled
 const FooterBar = styled.footer`
   width: 100%;
-  background-color: #36373e;
+  background-color: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,16 +37,16 @@ const Foot = styled.div`
   flex-direction: column;
   align-items: center;
   row-gap: 16px;
-  padding: 60px 20px;
+  padding: 70px 20px;
 
   @media (max-width: 1080px) {
-    padding: 50px 20px;
+    padding: 60px 20px;
   }
 `
 
 const FootName = styled.span`
   font-size: 0.875rem;
-  color: #c4c8cf;
+  color: #aaa;
 `
 
 const Info = styled.p`
@@ -77,27 +57,8 @@ const Info = styled.p`
   text-align: center;
 `
 
-const SNS = styled.div`
-  display: flex;
-  align-items: center;
-  column-gap: 24px;
-
-  a {
-    svg {
-      width: 18px;
-      fill: #979797;
-    }
-
-    &:hover {
-      svg {
-        fill: #797979;
-      }
-    }
-  }
-`
-
 const Copyright = styled.span`
   font-size: 0.6875rem;
-  color: #848a94;
+  color: #aaa;
   margin-top: 1em;
 `

@@ -33,12 +33,12 @@ export default function Index() {
     <>
       <SEO title="템플릿 웹 사이트" />
       <Section>
-        <Sec1 handleFocus={handleFocus} />
+        <Sec1 />
         <Sec2 />
         <Sec3 />
-        <Sec4 handleFocus={handleFocus} />
+        <Sec4 />
         <Sec5 />
-        <Sec6 contectRef={contectRef} />
+        <Sec6 />
       </Section>
     </>
   )

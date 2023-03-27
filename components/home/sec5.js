@@ -1,25 +1,49 @@
 import React from 'react'
-import Image from 'next/image'
 
 //style
 import styled from '@emotion/styled'
 
 //png
-import bannerImg from 'public/images/sec5-img.png'
+import bannerImg from 'public/images/sec5-img1.png'
+import bannerImg2 from 'public/images/sec5-img2.png'
+import Image from 'next/image'
+import { css } from '@emotion/react'
 
 //
 export default function Sec5() {
   return (
     <View>
-      <Image src={bannerImg} alt="banner" data-aos="zoom-in" />
-      <strong data-aos="fade" data-aos-delay="100">
-        {'우리는 나아갑니다\n그리고 만들어갑니다.'}
-      </strong>
-      <p data-aos="fade" data-aos-delay="200">
-        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab
-        illo inventore veritatis et quasi architecto beatae vitae dicta sunt,
-      </p>
+      <Wrap>
+        <Image src={bannerImg} alt="sec5" data-aos="fade" />
+        <Box data-aos="fade" data-aos-delay="110">
+          <strong>{'테플릿을 무료로\n 이용하세요!'}</strong>
+          <p>
+            Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt,
+          </p>
+        </Box>
+      </Wrap>
+
+      <Wrap>
+        <Box data-aos="fade" data-aos-delay="200">
+          <strong>{'테플릿을 무료로\n 이용하세요!'}</strong>
+          <p>
+            Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt,
+          </p>
+        </Box>
+
+        <Image
+          src={bannerImg2}
+          alt="sec5"
+          data-aos="fade"
+          data-aos-delay="300"
+        />
+      </Wrap>
     </View>
   )
 }
@@ -27,40 +51,61 @@ export default function Sec5() {
 //styled
 const View = styled.div`
   width: 100%;
-  max-width: 1180px;
-  padding: 120px 20px;
+  max-width: 1040px;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 100px 0 140px;
+  transition: 0.3s ease-in-out;
+  row-gap: 20px;
+  column-gap: 20px;
+
+  @media (max-width: 1080px) {
+    padding: 80px 30px 100px;
+  }
+`
+
+const Wrap = styled.div`
+  width: 100%;
+  max-width: 510px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   row-gap: 20px;
-  transition: 0.3s ease-in-out;
 
-  @media (max-width: 600px) {
-    padding: 0 0 80px;
-    row-gap: 16px;
+  @media (max-width: 1180px) {
+    max-width: 100%;
   }
 
   img {
     width: 100%;
-    max-height: 460px;
+    height: 290px;
+    border-radius: 6px;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 20px;
+  }
+`
 
-    @media (max-width: 1080px) {
-      max-height: 360px;
-    }
+const Box = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 560px;
+  padding: 40px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
 
-    @media (max-width: 600px) {
-      max-height: 260px;
-      border-radius: 0;
-      margin-bottom: 10px;
-    }
+  @media (max-width: 1180px) {
+    max-width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    padding: 40px 30px;
   }
 
   strong {
-    font-size: 32px;
-    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    white-space: pre-line;
     line-height: 1.4;
 
     @media (max-width: 1080px) {
@@ -68,22 +113,42 @@ const View = styled.div`
     }
 
     @media (max-width: 600px) {
-      font-size: 24px;
-      white-space: pre-line;
+      font-size: 22px;
     }
   }
 
   p {
-    width: 100%;
-    max-width: 640px;
     font-size: 15px;
-    color: #797979;
-    text-align: center;
+    color: #888;
+    line-height: 1.4;
+    margin-top: 20px;
 
     @media (max-width: 600px) {
       font-size: 14px;
-      white-space: pre-line;
-      padding: 0 20px;
+    }
+  }
+
+  div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 50px;
+
+    img {
+      width: 338px;
+      height: 260px;
+
+      @media (max-width: 600px) {
+        width: 300px;
+        height: auto;
+      }
+
+      @media (max-width: 400px) {
+        width: 240px;
+        height: auto;
+      }
     }
   }
 `

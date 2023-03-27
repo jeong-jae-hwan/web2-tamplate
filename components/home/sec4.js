@@ -1,39 +1,65 @@
 import React from 'react'
-//style
+import Image from 'next/image'
+
+//styled
 import styled from '@emotion/styled'
 
+//png
+import bannerImg from 'public/images/sec4-img.png'
+
 //
-export default function Sec4({ handleFocus }) {
+export default function Sec4() {
   return (
     <View>
-      <strong data-aos="fade">{'지금 당장 DEEP에게\n문의하세요.'}</strong>
-      <p data-aos="fade">
-        {'DEEP UI는 다양한 플렛폼의 \n템플릿을 취급하고 있습니다.'}
+      <strong data-aos="fade">{'당신의 상상력을\n만들어봐요!'}</strong>
+      <p data-aos="fade" data-aos-delay="100">
+        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
+        accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab
+        illo inventore veritatis et quasi architecto beatae vitae dicta sunt,
       </p>
-
-      <button type="button" onClick={handleFocus} data-aos="fade">
-        문의하기
-      </button>
+      <Image
+        src={bannerImg}
+        alt="banner"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      />
     </View>
   )
 }
 
-//styled
 const View = styled.div`
   width: 100%;
+  max-width: 1040px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  row-gap: 16px;
-  padding: 70px 0;
+  row-gap: 20px;
+  padding: 140px 0 0;
   transition: 0.3s ease-in-out;
-  background-image: linear-gradient(223deg, #f7f7f7 100%, #f0f0f0 30%);
 
-  @media (max-width: 600px) {
-    background-color: #fff;
-    background-image: none;
-    padding: 100px 0;
+  @media (max-width: 1080px) {
+    padding: 0 0 0;
+    align-items: flex-start;
+  }
+
+  img {
+    margin-top: 20px;
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 10px;
+
+    @media (max-width: 1080px) {
+      max-height: 360px;
+      border-radius: 0;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      max-height: 260px;
+      border-radius: 0;
+      margin-bottom: 10px;
+    }
   }
 
   strong {
@@ -42,7 +68,11 @@ const View = styled.div`
     line-height: 1.4;
 
     @media (max-width: 1080px) {
+      width: 100%;
+      text-align: start;
+      padding: 10px 30px 0;
       font-size: 26px;
+      order: 2;
     }
 
     @media (max-width: 600px) {
@@ -52,30 +82,22 @@ const View = styled.div`
   }
 
   p {
+    width: 100%;
+    max-width: 640px;
     font-size: 15px;
     color: #797979;
     text-align: center;
 
+    @media (max-width: 1080px) {
+      text-align: start;
+      padding: 0 30px 0;
+      order: 3;
+    }
+
     @media (max-width: 600px) {
       font-size: 14px;
       white-space: pre-line;
-    }
-  }
-
-  button {
-    font-size: 16px;
-    background-color: #333;
-    padding: 16px 54px;
-    margin-top: 14px;
-    border-radius: 100px;
-    color: #fff;
-
-    &:hover {
-      background-color: #222;
-    }
-
-    @media (max-width: 600px) {
-      font-size: 14px;
+      padding: 0 30px;
     }
   }
 `

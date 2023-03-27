@@ -3,9 +3,6 @@ import Link from 'next/link'
 
 //png,svg
 import Logo from 'public/images/logo.svg'
-import InstaIcon from 'public/icons/insta-icon.svg'
-import TwitterIcon from 'public/icons/twitter-icon.svg'
-import YoutubeIcon from 'public/icons/youtube-icon.svg'
 
 //styles
 import styled from '@emotion/styled'
@@ -36,25 +33,15 @@ export default function Header() {
               <Logo alt="서비스명" fill={isFixed ? '#333' : '#fff'} />
             </Link>
 
-            <Menus>
-              <Menu>
-                <Link href="s">
-                  <InstaIcon fill={isFixed ? '#999' : '#fff'} />
-                </Link>
-              </Menu>
+            <Tabs>
+              <Button type="button" isActive={isFixed}>
+                구글 스토어
+              </Button>
 
-              <Menu>
-                <Link href="s">
-                  <TwitterIcon fill={isFixed ? '#999' : '#fff'} />
-                </Link>
-              </Menu>
-
-              <Menu>
-                <Link href="s">
-                  <YoutubeIcon fill={isFixed ? '#999' : '#fff'} />
-                </Link>
-              </Menu>
-            </Menus>
+              <Button type="button" isActive={isFixed}>
+                앱 스토어
+              </Button>
+            </Tabs>
           </NavView>
         </NavBar>
       </HeaderBar>
@@ -125,31 +112,33 @@ const NavView = styled.div`
     }
   }
 `
-
-const Menus = styled.ul`
+const Tabs = styled.div`
   display: flex;
   align-items: center;
-  column-gap: 6px;
+  column-gap: 8px;
 `
 
-const Menu = styled.li`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const Button = styled.button`
+  font-size: 15px;
+  padding: 11px 20px;
+  background-color: ${({ isActive }) =>
+    isActive ? '#fff' : 'rgba(255, 255, 255, 0.3)'};
+  border: ${({ isActive }) =>
+    isActive ? '1px solid #ccc' : ' 1px solid #fff;'};
+  border-radius: 100px;
+  color: ${({ isActive }) => (isActive ? '#444' : ' #fff;')};
 
-  a {
-    padding: 10px;
+  &:hover {
+    background-color: ${({ isActive }) =>
+      isActive ? '#f9f9f9' : 'rgba(255, 255, 255, 0.4)'};
+  }
 
-    svg {
-      width: 22px;
+  @media (max-width: 600px) {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
 
-      @media (max-width: 600px) {
-        width: 20px;
-      }
-
-      &:hover {
-        opacity: 0.7;
-      }
-    }
+  @media (max-width: 400px) {
+    font-size: 13px;
   }
 `
